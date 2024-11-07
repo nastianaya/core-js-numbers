@@ -233,10 +233,11 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  if (toNumber.valueOf().isInteger) return value.valueOf();
+  const a = value.valueOf();
+  if (Number.isInteger(a)) return a;
   return def;
 }
-
+/** ==================================================================================================== */
 /**
  * Returns the cube of the given number.
  *
@@ -316,9 +317,10 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
+
 function isPowerOfTwo(num) {
-  if (Math.sqrt(num).isInteger) return true;
-  return false;
+  const a = Math.log2(num);
+  return Number.isInteger(a);
 }
 
 /**
